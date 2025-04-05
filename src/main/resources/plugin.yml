@@ -1,0 +1,4 @@
+name: OreGen
+version: '1.0'
+main: io.github.u10000je.oreGen.OreGen
+api-version: '1.20'
