@@ -1,4 +1,14 @@
 name: OreGen
+author: 10000Je
+website: https://github.com/10000Je/OreGen
 version: '1.0'
 main: io.github.u10000je.oreGen.OreGen
 api-version: '1.20'
+
+description: customizable ore generator plugin
+softdepend: [ItemsAdder]
+
+commands:
+  oregen:
+    description: manage command
+    permission: oregen.operator
