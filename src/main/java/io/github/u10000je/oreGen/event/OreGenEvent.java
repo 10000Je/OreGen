@@ -1,7 +1,7 @@
 package io.github.u10000je.oreGen.event;
 
+import io.github.u10000je.oreGen.data.ItemsAdderMaterial;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
@@ -11,16 +11,16 @@ public class OreGenEvent extends Event implements Cancellable {
 
     private static final HandlerList handlers = new HandlerList();
     private boolean cancelled;
-    private final Material createdMaterial;
+    private final ItemsAdderMaterial createdMaterial;
     private final Location createdLocation;
 
-    public OreGenEvent(Material createdMaterial, Location createdLocation) {
+    public OreGenEvent(ItemsAdderMaterial createdMaterial, Location createdLocation) {
+        this.cancelled = false;
         this.createdMaterial = createdMaterial;
         this.createdLocation = createdLocation;
-        this.cancelled = false;
     }
 
-    public Material getCreatedMaterial() {
+    public ItemsAdderMaterial getCreatedMaterial() {
         return this.createdMaterial;
     }
 
@@ -30,7 +30,7 @@ public class OreGenEvent extends Event implements Cancellable {
 
     @Override
     public boolean isCancelled() {
-        return cancelled;
+        return this.cancelled;
     }
 
     @Override
@@ -46,5 +46,4 @@ public class OreGenEvent extends Event implements Cancellable {
     public static @NotNull HandlerList getHandlerList() {
         return handlers;
     }
-
 }

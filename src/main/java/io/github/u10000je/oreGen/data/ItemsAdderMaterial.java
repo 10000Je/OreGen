@@ -1,4 +1,4 @@
-package io.github.u10000je.oreGen.itemsAdder.data;
+package io.github.u10000je.oreGen.data;
 
 import dev.lone.itemsadder.api.CustomBlock;
 import org.bukkit.Material;

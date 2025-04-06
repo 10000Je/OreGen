@@ -1,7 +1,7 @@
 package io.github.u10000je.oreGen;
 
 import io.github.u10000je.oreGen.command.OperatorCommand;
-import io.github.u10000je.oreGen.itemsAdder.controller.ItemsAdderFlowController;
+import io.github.u10000je.oreGen.controller.ItemsAdderFlowController;
 import io.github.u10000je.oreGen.controller.FlowController;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.YamlConfiguration;

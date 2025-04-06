@@ -1,8 +1,8 @@
-package io.github.u10000je.oreGen.itemsAdder.controller;
+package io.github.u10000je.oreGen.controller;
 
 import io.github.u10000je.oreGen.OreGen;
-import io.github.u10000je.oreGen.itemsAdder.data.ItemsAdderMaterial;
-import io.github.u10000je.oreGen.itemsAdder.event.ItemsAdderOreGenEvent;
+import io.github.u10000je.oreGen.data.ItemsAdderMaterial;
+import io.github.u10000je.oreGen.event.OreGenEvent;
 import dev.lone.itemsadder.api.CustomBlock;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -36,9 +36,9 @@ public class ItemsAdderFlowController implements Listener {
             return;
         }
         ItemsAdderMaterial createdMaterial = getCreatedMaterial(touchMaterialConfig);
-        ItemsAdderOreGenEvent itemsAdderOreGenEvent = new ItemsAdderOreGenEvent(createdMaterial, create.getLocation());
-        Bukkit.getPluginManager().callEvent(itemsAdderOreGenEvent);
-        if(itemsAdderOreGenEvent.isCancelled()) {
+        OreGenEvent oreGenEvent = new OreGenEvent(createdMaterial, create.getLocation());
+        Bukkit.getPluginManager().callEvent(oreGenEvent);
+        if(oreGenEvent.isCancelled()) {
             return;
         }
         e.setCancelled(true);

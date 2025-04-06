@@ -1,6 +1,7 @@
 package io.github.u10000je.oreGen.controller;
 
 import io.github.u10000je.oreGen.OreGen;
+import io.github.u10000je.oreGen.data.ItemsAdderMaterial;
 import io.github.u10000je.oreGen.event.OreGenEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -34,7 +35,7 @@ public class FlowController implements Listener {
             return;
         }
         Material createdMaterial = getCreatedMaterial(touchMaterialConfig);
-        OreGenEvent oreGenEvent = new OreGenEvent(createdMaterial, create.getLocation());
+        OreGenEvent oreGenEvent = new OreGenEvent(new ItemsAdderMaterial(createdMaterial), create.getLocation());
         Bukkit.getPluginManager().callEvent(oreGenEvent);
         if(oreGenEvent.isCancelled()) {
             return;
