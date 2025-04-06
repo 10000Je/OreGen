@@ -109,6 +109,7 @@ public final class OreGen extends JavaPlugin {
             return;
         }
         oregen.setExecutor(new OperatorCommand());
+        oregen.setTabCompleter(new OperatorCommand());
     }
 
 
